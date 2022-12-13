@@ -1,6 +1,15 @@
 import logo from './logo.svg';
 import { useState } from 'react';
+import SimpleImageSlider from "react-simple-image-slider";
 import './App.css';
+
+const images = [
+  { url: process.env.PUBLIC_URL + '/img/kt1q01.png'},
+  { url: process.env.PUBLIC_URL + '/img/kt1q02.png'},
+  { url: process.env.PUBLIC_URL + '/img/kt1q03.png' },
+  { url: process.env.PUBLIC_URL + '/img/kt1q04.png' },
+  { url: process.env.PUBLIC_URL + '/img/kt1q05.png' }
+];
 
 const App = () => {
   return (
@@ -9,10 +18,40 @@ const App = () => {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      
     }}>
+      
       {/* Spacer */}
       <div style={{ height: 30 }}>
-        <img src={process.env.PUBLIC_URL + '/img/kt1q01.png'} alt="kt1q01.logo"/>
+        <div>
+          <SimpleImageSlider
+            width={451}
+            height={172}
+            images={images}
+            showBullets={true}
+            showNavs={true}
+            autoPlay={true}
+            slideDuration={0.5}
+          />
+        </div>
+          {/* <ImageSlider effectDelay={1000} autoPlayDelay={3000}>
+            <Slide>
+              <img src={process.env.PUBLIC_URL + '/img/kt1q01.png'} alt="kt1q01.logo" />
+            </Slide>
+            <Slide>
+              <img src={process.env.PUBLIC_URL + '/img/kt1q02.png'} alt="kt1q01.logo"/>
+            </Slide>
+            <Slide>
+              <img src={process.env.PUBLIC_URL + '/img/kt1q03.png'} alt="kt1q01.logo"/>
+            </Slide>
+            <Slide>
+              <img src={process.env.PUBLIC_URL + '/img/kt1q04.png'} alt="kt1q01.logo"/>
+            </Slide>
+            <Slide>
+              <img src={process.env.PUBLIC_URL + '/img/kt1q05.png'} alt="kt1q01.logo"/>
+            </Slide>
+          </ImageSlider> */}
+          
       </div>
 
       {/* Header, Carousel */}
@@ -26,7 +65,7 @@ const App = () => {
       /> */}
 
       {/* Spacer */}
-      <div style={{ height: 145 }} />
+      <div style={{ height: 142 }} />
 
       {/* Main1 */}
       <div style={{
